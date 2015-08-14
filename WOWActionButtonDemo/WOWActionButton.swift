@@ -164,7 +164,7 @@ public class WOWActionButton: UIButton {
 
         indicator!.markerCount = 8
         indicator!.markerRadiusFactor = 0.5
-        indicator!.tintColor = UIColor.orangeColor()
+        indicator!.tintColor = indicatorColor
         indicator!.thickness = 6
         indicator!.length = 6
         indicator!.padding = 0
