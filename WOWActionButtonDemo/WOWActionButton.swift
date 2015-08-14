@@ -143,6 +143,7 @@ public class WOWActionButton: UIButton {
         }
     }
     
+    // reset to its original value
     public func reset() {
         
         self.layer.cornerRadius = originalCornerRadius
