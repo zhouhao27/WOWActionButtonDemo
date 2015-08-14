@@ -110,7 +110,7 @@ public class WOWActionButton: UIButton {
             anim.springSpeed = 20
             anim.springBounciness = 10
             self.pop_addAnimation(anim, forKey: "zooming")
-
+            
             let anim2 = POPBasicAnimation(propertyNamed: kPOPViewAlpha)
             anim2.toValue = 0
             self.pop_addAnimation(anim2, forKey: "fadeout")
@@ -141,6 +141,20 @@ public class WOWActionButton: UIButton {
                 self.frame = originalFrame                
             }
         }
+    }
+    
+    public func reset() {
+        
+        self.layer.cornerRadius = originalCornerRadius
+        self.titleLabel?.alpha = 1
+        self.frame = originalFrame
+        self.alpha = 1.0
+        
+        // TODO: set scale to 1 without animation
+        let anim = POPSpringAnimation(propertyNamed: kPOPViewScaleXY)
+        anim.toValue = NSValue(CGPoint: CGPointMake(1,1))
+        self.pop_addAnimation(anim, forKey: "zoomout")
+        
     }
     
     // MARK: private memthods
